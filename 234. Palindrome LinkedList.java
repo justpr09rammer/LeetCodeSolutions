@@ -12,7 +12,7 @@
 class Solution {
     //kinda global variable
     private boolean isEvenLength = true;
-    // for the odd length linked lists
+    // for the odd length linked listss
     private ListNode beforeMiddle = null;
     public boolean isPalindrome(ListNode head) {
 
