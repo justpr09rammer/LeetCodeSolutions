@@ -5,7 +5,7 @@ class Solution {
         StringBuilder result = new StringBuilder();
         boolean isODD = s.length() % 2 == 1;
         List<Character> firstHalf = new ArrayList<>();
-        //System.out.println(firstHalf + " -> firsthalf");
+        //System.out.println(firstHalf + " -> firsthalff");
         for (int i = 0; i < s.length() / 2; i++) firstHalf.add(s.charAt(i));
 
         //System.out.println( "unsorted first half result ->  " + firstHalf);
