@@ -1,0 +1,37 @@
+class Solution {
+    public void setZeroes(int[][] matrix) {
+        Set<Integer> doneRows = new HashSet<>();
+        Set<Integer> doneCols = new HashSet<>();
+        Set<List<Integer>> elementIndicesBasedOnZeroes = new HashSet<>();
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] == 0) {
+                    List list = new ArrayList();
+                    list.add(i);//first is row, second is col
+                    list.add(j);
+                    elementIndicesBasedOnZeroes.add(list);
+                }
+            }
+        }
+        for (List x : elementIndicesBasedOnZeroes) {
+            if (!doneRows.contains(x.get(0))) {
+                makeRowsZero(matrix, (Integer) x.get(0));
+                doneRows.add((Integer) x.get(0));
+            }
+            if (!doneCols.contains(x.get(1))) {
+                makeColsZero(matrix, (Integer) x.get(1));
+                doneCols.add((Integer) x.get(1));
+            }
+        }
+    }
+    private void makeRowsZero(int[][] matrix, int row) {
+        for (int i = 0; i < matrix[0].length; i++) {
+            matrix[row][i] = 0;
+        }
+    }
+    private void makeColsZero(int[][] matrix, int col) {
+        for (int i = 0; i < matrix.length; i++) {
+            matrix[i][col] = 0;
+        }
+    }
+}
