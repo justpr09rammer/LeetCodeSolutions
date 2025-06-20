@@ -16,7 +16,6 @@ class Solution {
                     sb.append(Character.toLowerCase(ch));
                 }
             }
-            System.out.println(sb);
         }
         if (!sb.isEmpty()) {
             sb.setCharAt(0, Character.toLowerCase(sb.charAt(0)));
